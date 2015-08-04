@@ -22,6 +22,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'redis', '~> 3.0.1'
 gem 'hiredis', '~> 0.4.5'
 
+#Google Webfont
+
+gem 'google-webfonts', '~> 0.2.0'
+
 # Kaminari: https://github.com/amatsuda/kaminari
 gem 'kaminari', '0.16.3'
 

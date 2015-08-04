@@ -99,6 +99,8 @@ GEM
       multi_json (~> 1.10)
       retriable (~> 1.4)
       signet (~> 0.6)
+    google-webfonts (0.2.0)
+      actionpack (>= 3.0.0)
     hashie (3.4.2)
     hiredis (0.4.5)
     i18n (0.7.0)
@@ -243,6 +245,7 @@ DEPENDENCIES
   foundation-rails
   friendly_id (= 5.1.0)
   google-api-client
+  google-webfonts (~> 0.2.0)
   hiredis (~> 0.4.5)
   jbuilder (= 2.3.0)
   jquery-rails (= 4.0.4)
