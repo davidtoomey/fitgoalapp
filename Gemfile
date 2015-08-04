@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby '2.2.2'
 
 # Standard Rails gems
 gem 'rails', '4.2.3'
@@ -38,6 +37,7 @@ gem 'railsbricks'
 gem 'bootstrap-sass', '3.3.5.1'
 #foundation
 gem 'foundation-rails'
+gem 'therubyracer', platforms: :ruby
 
 group :development, :test do
   gem 'byebug', '5.0.0'
