@@ -11,8 +11,16 @@ gem 'turbolinks', '2.5.3'
 gem 'jbuilder', '2.3.0'
 gem 'bcrypt', '3.1.10'
 
+#Sign in with GMail
+gem 'google-api-client'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
 # Necessary for Windows OS (won't install on *nix systems)
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
+
+#cart
+gem 'redis', '~> 3.0.1'
+gem 'hiredis', '~> 0.4.5'
 
 # Kaminari: https://github.com/amatsuda/kaminari
 gem 'kaminari', '0.16.3'
@@ -28,6 +36,8 @@ gem 'railsbricks'
 
 # Bootstrap 3: https://github.com/twbs/bootstrap-sass
 gem 'bootstrap-sass', '3.3.5.1'
+#foundation
+gem 'foundation-rails'
 
 group :development, :test do
   gem 'byebug', '5.0.0'

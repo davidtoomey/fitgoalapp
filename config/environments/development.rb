@@ -26,16 +26,17 @@ Railsbricks2215::Application.configure do
 
   # Mailer
   config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: ENV["SMTP_SERVER"],
+    address: "smtp.gmail.com",
     openssl_verify_mode: OpenSSL::SSL::VERIFY_NONE,
-    port: ENV["SMTP_PORT"].to_i,
-    domain: ENV["MAILER_DOMAIN"],
-    authentication: "plain",
+    port: 587,
+    domain: "gmail.com",
+    authentication: :plain,
     enable_starttls_auto: true,
-    user_name: ENV["SMTP_USER"],
-    password: ENV["SMTP_PWD"]
+    user_name: "fitgoalapp@gmail.com",
+    password: "PatrickAzeezDavid123"
   }
 end
