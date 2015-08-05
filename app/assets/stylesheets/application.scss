@@ -227,8 +227,8 @@ li,ul,body,input{
 	text-align:center;
 	line-height:1em;
 	color:white;
-	margin-top:2%;
 	margin-left:25%;
+	position:relative;
 
 }
 
@@ -287,8 +287,8 @@ li,ul,body,input{
 	margin-left:0;
 	background-color:black;
 	opacity: 0.4;
-	height:600px;
-	margin-top:100px;
+	height:300px;
+
 
 
 }
@@ -299,7 +299,24 @@ li,ul,body,input{
 	z-index:1;
 }
 
+.row{
+	margin-top:2%;
+}
 
+#one{
+	position:relative;
+	left:1000px;
+}
+
+#two{
+	position:relative;
+	right:1000px;
+}
+
+#three{
+	position:relative;
+	left:1000px;
+}
 
 
 

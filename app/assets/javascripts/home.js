@@ -1,19 +1,21 @@
-// $(function(){  // $(document).ready shorthand
-// 	$('#homedesc').hide().delay(2500).fadeIn('slow');
-// 	$('.btn').hide().delay(2500).fadeIn('slow');
-// });
-$(document).ready(function() {
+$(function(){  // $(document).ready shorthand
+	$(".two").ready(function(){
+    $("#one").delay(3000).animate({
+      left: '0px'
 
-    $("#homedesc").animate({left: "0"}, {
-    duration: 2000       
     });
-    $("#two").animate({left: "0"}, {
-    duration: 2250
+    $("#two").delay(4000).animate({
+      right: '0px'
     });
-    $("#three").animate({left: "0"}, {
-    duration: 2500        
+    $("#three").delay(5000).animate({
+      left : '0px'
     });
 });
+});
+
+
+
+
 
 var target = $("#target");
 target.html(target.text().replace(/./g, "<span>$&</span>"));
