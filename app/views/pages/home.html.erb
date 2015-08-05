@@ -2,40 +2,38 @@
 
 <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 <%= javascript_include_tag 'home.js' -%>
-<div class="center">
+
+	<section>
+		<div class="row">
+			<div class="fitgoal">
+				<h1 id="target"style="color:#00D900;font-size:150px;">fitGoal</h1>
+			</div>
+			</div>
+	</section>
 
 
-	<h1 id="fit">Fit</h1><h1 id="goal">GOAL</h1>
-	<br>
-	</br>
 
-	<div class="header">
-		<h1>fitGoal</h1>
-		<br>
-		</br>
-	</div>
+	<section class="section2">
 
-</div>
-	<br>
 	
 
-	<h3><div id="signup">
+					<%= link_to "Start Now", new_user_registration_path %>
+
+
+
 		
-		<div class="row">	
-		<button class="btn md ghost">
-			<%= link_to "Start Now", new_user_registration_path %>
-		</button>
-	</div>
+			<br>
+			<br>
+			<br>
+			<div id="homedesc" class="span4">
+				
+				<h3 id="one">fitGoal is an online tool to help people achieve their health goals.</h3>
+		
+				<h3 id="two">Whether you are a fitness expert or are just starting on your fitness journey</h3>
+				<h3 id="threee">fitGoal is the tool for you.</h3>
+			</div>
 
-
-	</div></h3>
-	<br>
-	<br>
-	<br>
-	<div id="homedesc">
-		<h3>fitGoal is an online tool to help people achieve their health goals.</h3>
-		<h3>Whether you are a fitness expert or are just starting</h3>
-		<h3> on your fitness journey fitGoal is the tool for you.</h3>
-	</div>
+	</section>
 
