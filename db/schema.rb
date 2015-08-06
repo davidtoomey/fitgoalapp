@@ -13,6 +13,20 @@
 
 ActiveRecord::Schema.define(version: 20150806153437) do
 
+  create_table "answers", force: :cascade do |t|
+    t.integer  "question_id"
+    t.integer  "choice_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "choices", force: :cascade do |t|
+    t.string   "choice"
+    t.integer  "question_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "daily_caloric_intakes", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "calories"
@@ -33,15 +47,17 @@ ActiveRecord::Schema.define(version: 20150806153437) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
+  create_table "questions", force: :cascade do |t|
+    t.string   "question"
+    t.integer  "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "username",               default: "",    null: false
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
-    t.integer  "starting_weight",                        null: false
-    t.integer  "target_weight",                          null: false
-    t.integer  "height",                                 null: false
-    t.integer  "age",                                    null: false
-    t.string   "sex",                    default: "",    null: false
     t.boolean  "admin",                  default: false, null: false
     t.boolean  "locked",                 default: false, null: false
     t.string   "slug"
