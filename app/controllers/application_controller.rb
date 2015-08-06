@@ -28,6 +28,7 @@ class ApplicationController < ActionController::Base
       :current_password,
       :current_weight,
       :target_weight,
+      :starting_weight,
       :height,
       :sex,
       :age
