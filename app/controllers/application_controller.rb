@@ -12,21 +12,33 @@ class ApplicationController < ActionController::Base
       :username,
       :email,
       :password,
-      :password_confirmation)
+      :password_confirmation,
+      :current_weight,
+      :target_weight,
+      :starting_weight,
+      :height,
+      :sex,
+      :age
+      )
     }
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(
       :username,
       :email,
       :password,
       :password_confirmation,
-      :current_password
+      :current_password,
+      :current_weight,
+      :target_weight,
+      :height,
+      :sex,
+      :age
       )
     }
   end
 
   # Redirects on successful sign in
   def after_sign_in_path_for(resource)
-    inside_path
+    user_path(@user.id)
   end
 
   # Auto-sign out locked users

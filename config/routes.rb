@@ -34,19 +34,14 @@
 #
 
 Railsbricks2215::Application.routes.draw do
-  get 'carts/show'
-
-  resources :answers
-  resources :choices
-  resources :questions
-  resources :carts
+  resources :daily_caloric_intakes
+  resources :weigh_ins
   root "pages#home"
   get "home", to: "pages#home", as: "home"
-  get "inside", to: "pages#inside", as: "inside"
-  get "/survey" => "survey#index"
 
   devise_for :users
-  resources :users, :only => [:show]
+  #resources :users, :only => [:show]
+  get '/users/:id', :to => 'users#show', :as => :user
 
   namespace :admin do
     root "base#index"
@@ -55,6 +50,8 @@ Railsbricks2215::Application.routes.draw do
   end
 
 #   GmailAlerts::Application.routes.draw do
+  resources :daily_caloric_intakes
+  resources :weigh_ins
 #   root to: 'sessions#new'
 #   resources :sessions, only: :index
 #   get "/auth/:provider/callback" => 'sessions#create'

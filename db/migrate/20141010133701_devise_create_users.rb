@@ -5,6 +5,12 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :username,           :null => false, :default => ""
       t.string :email,              :null => false, :default => ""
       t.string :encrypted_password, :null => false, :default => ""
+      t.integer :starting_weight,   :null => false, :default => ""
+      t.integer :target_weight,   :null => false, :default => ""
+      t.integer :height,   :null => false, :default => ""
+      t.integer :age,   :null => false, :default => ""
+      t.string :sex, :null => false, :default => ""
+
 
       ## Admin
       t.boolean :admin, :null => false, :default => false

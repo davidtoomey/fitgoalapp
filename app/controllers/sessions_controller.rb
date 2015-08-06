@@ -6,5 +6,6 @@ class SessionsController < ApplicationController
  
   def create
     @auth = request.env['omniauth.auth']['credentials']
+    session[:user_id] = user.id
   end
 end
