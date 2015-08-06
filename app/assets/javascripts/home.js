@@ -1,19 +1,25 @@
+
 $(function(){  // $(document).ready shorthand
-	$(".two").ready(function(){
-    $("#one").delay(3000).animate({
+	$("").ready(function(){
+    $("#one").delay(4000).animate({
       left: '0px'
 
     });
-    $("#two").delay(4000).animate({
+    $("#two").delay(6000).animate({
       right: '0px'
     });
-    $("#three").delay(5000).animate({
+    $("#three").delay(8000).animate({
       left : '0px'
     });
+
+
+
 });
 });
 
-
+$(function(){
+  $('.dbtn').hide().delay(10000).fadeIn(3000);
+});
 
 
 
