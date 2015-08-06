@@ -1,0 +1,24 @@
+#current_weight_bmi {
+	border:1px  solid black;
+}
+
+#lbs_to_goal {
+	border: 1px solid black;
+}
+
+#cals_to_goal {
+	border: 1px solid black;
+}
+
+#cals_to_goal p {
+	margin: 2px;
+}
+
+#user_card {
+	width: 25%;
+	padding: 2px;
+}
+
+#username {
+	font-size: 20px;
+}
