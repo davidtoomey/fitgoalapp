@@ -7,10 +7,11 @@
 </head>
 <body>
 
-<<<<<<< HEAD
+
 <div id="user_card">
 <h1 id="username"> Hello <%=@user.username %></h1>
 <img src="http://placehold.it/350x150">
+
 <p> Starting Weight: <%= @user.starting_weight %></p>
 <p> Target Weight: <%= @user.target_weight %></p>
   <div id="current_weight_bmi">
@@ -25,16 +26,8 @@
   </div>
 </div>
 
-    <h3> <%=@user.congratulations %></h3>
-      
-
-
-
-    <h1> Hello <%=@user.username %></h1>
-    <h3> <%=@user.congratulations %></h3>
-
-
-      <p> Starting Weight: <%= @user.starting_weight %></p>
+    <div class="calculations">
+      <p> <div>Starting Weight</div>: <%= @user.starting_weight %></p>
       <p> Target Weight: <%= @user.target_weight %></p>
 
       <p> Current Weight: <%= @user.current_weight %> </p>
@@ -51,10 +44,10 @@
       <p> Burn <%= @user.yearly_burn_to_goal %> calories a day to lose it in a year </p>
       <p> You could run... <%= @user.cals_to_miles_ran %> miles </p>
       <p> Thats <%= @user.miles_per_week %> miles per week </p>
-
+    </div>
 <%= form_for WeighIn.new do |f| %>
 
-
+<div class="weight_inputs">
     <%= f.label :"Enter Current Weight" %><br>
     <%= f.text_field :weight %>
     <%= f.submit %>
@@ -64,6 +57,6 @@
     <%= f.text_field :calories %>
     <%= f.submit %>
     <% end %>
-
+</div>
 </body>
 </html>

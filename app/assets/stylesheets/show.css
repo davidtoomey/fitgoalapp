@@ -1,13 +1,23 @@
+body{
+	background: url(whitewoodtextre.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	overflow-x:hidden;
+
+}
+
 #current_weight_bmi {
-	border:1px  solid black;
+	border:3px  solid black;
 }
 
 #lbs_to_goal {
-	border: 1px solid black;
+	border: 2px solid black;
 }
 
 #cals_to_goal {
-	border: 1px solid black;
+	border: 3px solid black;
 }
 
 #cals_to_goal p {
@@ -17,8 +27,28 @@
 #user_card {
 	width: 25%;
 	padding: 2px;
+	float:left;
 }
 
 #username {
 	font-size: 20px;
+}
+
+.calculations{
+	float:right;
+	background-color:black;
+	opacity:0.9;
+	width:70%;
+	margin-left:5%;
+	margin-top:6.25%;
+}
+
+.weight_inputs{
+	float:left;
+	width:25%;
+	margin-top:5%;
+}
+
+.redglow{
+	text-shadow: 3px 3px 50px black
 }
