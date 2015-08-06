@@ -46,6 +46,7 @@ Railsbricks2215::Application.routes.draw do
   get "/survey" => "survey#index"
 
   devise_for :users
+  resources :users, :only => [:show]
 
   namespace :admin do
     root "base#index"
@@ -54,11 +55,6 @@ Railsbricks2215::Application.routes.draw do
   end
 
 #   GmailAlerts::Application.routes.draw do
-  get 'carts/show'
-
-  resources :answers
-  resources :choices
-  resources :questions
 #   root to: 'sessions#new'
 #   resources :sessions, only: :index
 #   get "/auth/:provider/callback" => 'sessions#create'
