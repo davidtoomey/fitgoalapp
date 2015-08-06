@@ -1,0 +1,56 @@
+<%= stylesheet_link_tag "welcome" %>
+
+
+<div class="container-fluid">
+<div class="row" id="user_welcome">
+  <div class="col-xs-12">
+    <h1> Hello <%=@user.username %></h1>
+    <h3> <%=@user.congratulations %></h3>
+  </div>
+</div>
+</div>
+<div class="container-fluid">
+  <div class="row" id="basic_stats">
+    <div class="col-xs-10">
+      <p> Starting Weight: <%= @user.starting_weight %></p>
+      <p> Target Weight: <%= @user.target_weight %></p>
+      <p> Current Weight: <%= @user.current_weight %> </p>
+      <p> Your last Weigh In: <%= @user.previous_weight %> </p>
+      <p> Your caloric intake is: <%= @user.current_caloric_intake %> </p>
+      <p> Your BMI: <%= @user.calculate_bmi %> </p>
+      <p> Your basal metabolic rate is <%= @user.basal_metabolic_rate %> (calories needed to maintain your current weight) </p>
+      <p> You Currently consume <%= @user.difference %> calories <%= @word %> than you burn per day </p>
+      <p> If you do don't exercise, it will take you <%= @user.rest_loss_gain %> days to <%= @word2 %> a single pound </p>
+      <p> Pounds until you reach your goal: <%= @user.weight_to_goal %> </p>
+      <p> Calories you need to burn: <%= @user.calories_to_goal %> </p>
+      <p> Burn <%= @user.weekly_burn_to_goal %> calories a day to lose it in a week (Good Luck) </p>
+      <p> Burn <%= @user.monthly_burn_to_goal %> calories a day to lose it in a month </p>
+      <p> Burn <%= @user.yearly_burn_to_goal %> calories a day to lose it in a year </p>
+      <p> You could run... <%= @user.cals_to_miles_ran %> miles </p>
+      <p> Thats <%= @user.miles_per_week %> miles per week </p>
+
+  </div>
+  <div class="col-xs-2">
+<%= form_for WeighIn.new do |f| %>
+
+  <div class="field">
+    <%= f.label :"Enter Current Weight" %><br>
+    <%= f.text_field :weight %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+<%= form_for DailyCaloricIntake.new do |f| %>
+
+  <div class="field">
+    <%= f.label :"Estimated Daily Calories" %><br>
+    <%= f.text_field :calories %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+    <% end %>
+</div>
+</div>
+</div>
+<%= link_to 'Back', root_path %>

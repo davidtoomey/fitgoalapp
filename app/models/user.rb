@@ -81,4 +81,161 @@ class User < ActiveRecord::Base
   def self.users_count
     where("admin = ? AND locked = ?",false,false).count
   end
+
+  has_many :weigh_ins
+  has_many :daily_caloric_intakes
+
+  validates :height, presence: true
+  validates :starting_weight, presence: true
+  validates :target_weight, presence: true
+
+  def  current_caloric_intake
+    calories = 0
+    daily_caloric_intake = daily_caloric_intakes.last
+
+    if !daily_caloric_intake.nil?
+      calories = daily_caloric_intake.calories
+    end
+    calories
+  end
+
+  def inches_to_cm
+    height * 2.35
+  end
+
+  def lbs_to_kg
+    current_weight / 2.2046
+  end
+
+  def basal_metabolic_rate
+    if !current_weight.nil? && sex == "male"
+    (66.47 + (13.75 * current_weight) + (5 * height) - (6.75 * age)).floor
+  else
+    (665.09 + (9.56 * current_weight) + (1.84 * height) - (4.67 * age)).floor
+  end
+  end
+
+  def difference
+    if basal_metabolic_rate > current_caloric_intake
+      (basal_metabolic_rate - current_caloric_intake).floor
+    else
+      (current_caloric_intake - basal_metabolic_rate).floor
+    end
+  end
+
+  def rest_loss_gain
+    if basal_metabolic_rate > current_caloric_intake
+    (3500 / difference).floor
+  else
+    (3500 / difference).floor
+  end
+  end
+  
+  def height_in_inches
+    (feet * 12) + inches
+  end
+
+
+  def current_weight
+    weight = 0
+    weigh_in = weigh_ins.last
+
+    if !weigh_in.nil?
+      weight = weigh_in.weight
+    else
+      weight = starting_weight
+    end
+
+    weight
+  end
+
+  def weight_change 
+    starting_weight - current_weight
+  end
+
+  def weight_to_goal
+    if current_weight > target_weight
+      current_weight - target_weight
+    else
+      target_weight - current_weight
+    end
+  end
+
+
+  def calories_to_goal
+    if current_weight > target_weight
+      @deficit = current_weight - target_weight
+      @cals = @deficit * 3500
+    else
+      @deficit = target_weight - current_weight
+      @cals = @deficit * 3500
+    end
+  end
+
+   def calculate_bmi
+    if !current_weight.nil?
+      (current_weight * 703) / height**2
+    end
+  end
+
+  def previous_weight
+    weight = 0
+    weigh_in = weigh_ins[-2]
+
+    if !weigh_in.nil?
+      weight = weigh_in.weight
+    end
+    weight
+  end
+
+
+  def weekly_burn_to_goal
+    calories_to_goal / 7
+  end
+
+  def monthly_burn_to_goal
+    calories_to_goal / 30
+  end
+
+  def yearly_burn_to_goal
+    calories_to_goal / 365
+  end
+
+  def cals_to_miles_ran
+    calories_to_goal / 100
+  end
+
+  def miles_per_week
+    cals_to_miles_ran / 7
+  end
+
+  def daily_plan_exercise
+   a = (miles_per_week / 7)
+   a = (a / 2)
+   return a
+  end
+
+  def daily_plan_calorie
+    basal_metabolic_rate * 0.95
+  end
+
+  def congratulations
+    @inspirational_quotes = ['What great thing would you attempt if you knew you could not fail?','Put your heart, mind, and soul into even your smallest acts. This is the secret of success.', 'you are a fat fuck']
+    if target_weight < current_weight
+      @inspirational_quotes.sample
+    else
+      "You Did It!"
+    end
+  end
+
+
+
+
+
+
+
+
+
+
+
 end

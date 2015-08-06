@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @daily_caloric_intake.user_id %>
+</p>
+
+<p>
+  <strong>Calories:</strong>
+  <%= @daily_caloric_intake.calories %>
+</p>
+
+<%= link_to 'Edit', edit_daily_caloric_intake_path(@daily_caloric_intake) %> |
+<%= link_to 'Back', daily_caloric_intakes_path %>

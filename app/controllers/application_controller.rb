@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
 
   # Redirects on successful sign in
   def after_sign_in_path_for(resource)
-    user_path[:id]
+    user_path
   end
 
   # Auto-sign out locked users

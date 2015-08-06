@@ -38,8 +38,40 @@
     <div class="form-group">
       <div class="row">
         <div class="col-sm-6">
-          <%= f.label :password_confirmation %>
-          <%= f.password_field :password_confirmation, class: "form-control" %>
+          <%= f.label :"Starting Weight" %>
+          <%= f.text_field :starting_weight, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+        <div class="form-group">
+      <div class="row">
+        <div class="col-sm-6">
+          <%= f.label :"Target Weight" %>
+          <%= f.text_field :target_weight, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+        <div class="form-group">
+      <div class="row">
+        <div class="col-sm-6">
+          <%= f.label :"Height"%>
+          <%= f.text_field :height, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+        <div class="form-group">
+      <div class="row">
+        <div class="col-sm-6">
+          <%= f.label :Age %>
+          <%= f.text_field :age, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+        <div class="form-group">
+      <div class="row">
+        <div class="col-sm-6">
+          <%= f.label :Sex %>
+          <%= f.text_field :sex, class: "form-control" %>
         </div>
       </div>
     </div>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Weigh Ins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Weight</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @weigh_ins.each do |weigh_in| %>
+      <tr>
+        <td><%= weigh_in.user_id %></td>
+        <td><%= weigh_in.weight %></td>
+        <td><%= link_to 'Show', weigh_in %></td>
+        <td><%= link_to 'Edit', edit_weigh_in_path(weigh_in) %></td>
+        <td><%= link_to 'Destroy', weigh_in, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Weigh in', new_weigh_in_path %>
