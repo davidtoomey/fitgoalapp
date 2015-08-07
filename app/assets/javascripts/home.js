@@ -11,6 +11,16 @@ $(function(){  // $(document).ready shorthand
     $("#three").delay(8000).animate({
       left : '0px'
     });
+    $(".calculations").animate({
+      width: '70%'
+    });
+    $(".quotes").delay(200).animate({
+      width: '70%'
+    });
+    $("#user_card").delay(250).animate({
+      opacity: '1'
+    });
+
 
 
 

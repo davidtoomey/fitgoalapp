@@ -3,7 +3,11 @@
  *
  *= require_self
  */
+
+
 @import "railsbricks_custom";
+
+
 
 .center{
 	text-align:center;
@@ -299,8 +303,10 @@ li,ul,body,input{
 
 .navbar{
 	position:fixed;
+	background-color:black;
 	width:100%;
 	z-index:1;
+
 
 }
 
