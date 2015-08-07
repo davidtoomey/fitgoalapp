@@ -56,11 +56,11 @@
           <p> <strong style="color:green;">Pounds until you reach your goal</strong>: <%= @user.weight_to_goal %> </p>
           <p> <strong>Calories you need to <strong style="color:red;">burn</strong></strong>: <%= @user.calories_to_goal %> </p>
           <hr>
-          <p> Burn <%= @user.weekly_burn_to_goal %> calories a day to <strong>lose it in a week</strong> (Good Luck) </p>
+          <p> <%= @word3 %><%= @user.weekly_burn_to_goal %> calories a day to <strong>lose it in a week</strong> (Good Luck) </p>
           <hr>
-          <p> Burn <%= @user.monthly_burn_to_goal %> calories a day to <strong style="color:green;">lose it in a month</strong> </p>
+          <p> <%= @word3 %> <%= @user.monthly_burn_to_goal %> calories a day to <strong style="color:green;">lose it in a month</strong> </p>
           <hr>
-          <p> Burn <%= @user.yearly_burn_to_goal %> calories a day to <strong style="color:green;">lose it in a year</strong> </p>
+          <p> <%= @word3 %> <%= @user.yearly_burn_to_goal %> calories a day to <strong style="color:green;">lose it in a year</strong> </p>
           <hr>
           <p> You could run... <%= @user.cals_to_miles_ran %> miles </p>
           <hr>

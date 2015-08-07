@@ -16,6 +16,7 @@ $(function(){  // $(document).ready shorthand
     });
     $(".quotes").delay(200).animate({
       width: '70%'
+      
     });
     $("#user_card").delay(250).animate({
       opacity: '1'

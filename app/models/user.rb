@@ -220,7 +220,7 @@ class User < ActiveRecord::Base
   end
 
   def congratulations
-    @inspirational_quotes = ['What great thing would you attempt if you knew you could not fail?','Put your heart, mind, and soul into even your smallest acts. This is the secret of success.', 'you are a fat fuck']
+    @inspirational_quotes = ['What great thing would you attempt if you knew you could not fail?','Put your heart, mind, and soul into even your smallest acts. This is the secret of success.', 'layoff the twinkies, man!', 'Do not talk about it, be about it!','You can do it!']
     if target_weight < current_weight
       @inspirational_quotes.sample
     else
