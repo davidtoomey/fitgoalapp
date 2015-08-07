@@ -31,6 +31,7 @@ class WeighInsController < ApplicationController
       if @weigh_in.save
         format.html { redirect_to user_path(current_user), notice: 'Weigh in was successfully created.' }
         format.json { render :show, status: :created, location: @weigh_in }
+        format.js 
       else
         format.html { render :new }
         format.json { render json: @weigh_in.errors, status: :unprocessable_entity }

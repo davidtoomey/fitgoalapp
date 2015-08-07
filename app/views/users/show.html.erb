@@ -49,7 +49,7 @@
           <p> Thats <%= @user.miles_per_week %> miles per week </p>
         </div>
     </div>
-<%= form_for WeighIn.new do |f| %>
+<%= form_for WeighIn.new, :remote => true do |f| %>
 
 <div class="weight_inputs">
     <%= f.label :"Enter Current Weight" %><br>
