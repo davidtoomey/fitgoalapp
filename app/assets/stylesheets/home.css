@@ -1,0 +1,14 @@
+@media all and (max-width:675px){
+	.section2{
+		height:330px;
+    }
+    .fitgoal span{
+    	font-size:100px;
+    }
+}
+
+@media all and (max-width:600px){
+	.section2{
+		height:430px;
+    }
+}
