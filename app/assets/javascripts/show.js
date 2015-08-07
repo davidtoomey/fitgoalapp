@@ -1,1 +1,0 @@
-$('form').trigger('submit.rails');
