@@ -13,6 +13,8 @@ def show
     end
   if @user.rest_loss_gain == 1
     @day = "day"
+  else 
+    @day = "days"
   else
     @day = 'days'
   end

@@ -20,7 +20,7 @@
 <hr>
 <p> <strong style="color:green;">Target Weight</strong>: <%= @user.target_weight %></p>
 <hr>
-     <p> <strong>Current Weight</strong>: <%= @user.current_weight %> </p>
+     <p> <strong>Current Weight</strong>: <div class="data"><%= @user.current_weight %></div></p>
      <hr>
   <div id="bmi">
      <p> <strong style="color:green;">Your BMI</strong>: <%= @user.calculate_bmi %> </p>
@@ -56,7 +56,7 @@
           <p> <strong style="color:green;">Pounds until you reach your goal</strong>: <%= @user.weight_to_goal %> </p>
           <p> <strong>Calories you need to <strong style="color:red;">burn</strong></strong>: <%= @user.calories_to_goal %> </p>
           <hr>
-          <p> <%= @word3 %><%= @user.weekly_burn_to_goal %> calories a day to <strong>lose it in a week</strong> (Good Luck) </p>
+          <p> <%= @word3 %> <%= @user.weekly_burn_to_goal %> calories a day to <strong>lose it in a week</strong> (Good Luck) </p>
           <hr>
           <p> <%= @word3 %> <%= @user.monthly_burn_to_goal %> calories a day to <strong style="color:green;">lose it in a month</strong> </p>
           <hr>
