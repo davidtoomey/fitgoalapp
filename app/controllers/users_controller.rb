@@ -15,6 +15,8 @@ def show
     @day = "day"
   else 
     @day = "days"
+  else
+    @day = 'days'
   end
 end
 
